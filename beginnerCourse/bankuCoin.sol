@@ -36,8 +36,8 @@ contract bankuCoin {
    function burn(address user, uint amount) public {
       require(balances[user] >= amount, "Burning an amount larger than the user's balance is prohibited");
 
-       totalSupply += amount;
-       balances[user] += amount;
+       totalSupply -= amount;
+       balances[user] -= amount;
     }
 
 }
